@@ -9,16 +9,16 @@ import {
 import { ArrowRightIcon } from '@heroicons/react/20/solid';
 import { Button } from './button';
 import { useActionState } from 'react';
-import { authenticate } from '../lib/action';
+import { authenticate } from '../lib/actions'; 
 import { useSearchParams } from 'next/navigation';
-
+ 
 export default function LoginForm() {
   const searchParams = useSearchParams();
   const callbackUrl = searchParams.get('callbackUrl') || '/dashboard';
   const [errorMessage, formAction, isPending] = useActionState(
     authenticate,
     undefined,
-  )
+  );
 
   return (
     <form action={formAction} className="space-y-3">
