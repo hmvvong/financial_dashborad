@@ -43,7 +43,7 @@ const CreateInvoice = FormSchema.omit({ id: true, date: true });
 
 const UpdateInvoice = FormSchema.omit({id: true, date: true});
 
-export async function deleteInvoice(id) {
+export async function deleteInvoice(id: string) {
   // throw new Error('error!!!!!!!!!!');
 
   await sql`DELETE FROM invoices WHERE id=${id}`;
