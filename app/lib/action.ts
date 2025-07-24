@@ -6,7 +6,7 @@ import { redirect } from 'next/navigation';
 import { signIn } from '@/auth';
 import { AuthError } from 'next-auth';
 
-export async function authenticate( prevState, formData ) {
+export async function authenticate( prevState: State, formData: FormData ) {
   try {
     await signIn('credentials', formData);
 
