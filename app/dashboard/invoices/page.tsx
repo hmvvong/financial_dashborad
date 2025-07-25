@@ -8,9 +8,11 @@ import { Suspense } from 'react';
 import { fetchInvoicesPages } from '@/app/lib/data';
 import { Metadata } from 'next';
 
-export const metadata = {
-  title: 'Invoices',
-}
+export const metadata: Metadata = {
+  title: {
+   absolute: 'hahaha'
+  },
+};
  
 export default async function Page(props: {
   searchParams?: Promise<{
