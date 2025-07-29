@@ -69,8 +69,16 @@ export default function LoginForm() {
         </div>
         
         <input type='hidden' name='redirectTo' value={callbackUrl}/>
-        <Button className="mt-4 w-full">
-          Log in <ArrowRightIcon className="ml-auto h-5 w-5 text-gray-50" />
+        <Button className="mt-4 w-full" disabled={isPending}>
+          {isPending ? (
+            <>
+              Logging in... <div className="ml-auto h-5 w-5 animate-spin rounded-full border-2 border-gray-50 border-t-transparent" />
+            </>
+          ) : (
+            <>
+              Log in <ArrowRightIcon className="ml-auto h-5 w-5 text-gray-50" />
+            </>
+          )}
         </Button>
         <div className="flex h-8 items-end space-x-1">
           {/* Add form errors here */}

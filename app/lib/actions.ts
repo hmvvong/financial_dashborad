@@ -1,10 +1,10 @@
-"use server";
-import { z } from 'zod';
-import postgres from 'postgres';
-import { revalidatePath } from 'next/cache';
-import { redirect } from 'next/navigation';
-import { signIn } from '@/auth';
-import { AuthError } from 'next-auth';
+"use server"; 
+import { z } from 'zod'; 
+import postgres from 'postgres'; 
+import { revalidatePath } from 'next/cache'; 
+import { redirect } from 'next/navigation'; 
+import { signIn } from '@/auth'; 
+import { AuthError } from 'next-auth'; 
 
 export async function authenticate( prevState: string | undefined, formData: FormData ) {
   try {
@@ -44,7 +44,6 @@ const CreateInvoice = FormSchema.omit({ id: true, date: true });
 const UpdateInvoice = FormSchema.omit({id: true, date: true});
 
 export async function deleteInvoice(id: string) {
-  // throw new Error('error!!!!!!!!!!');
 
   await sql`DELETE FROM invoices WHERE id=${id}`;
   revalidatePath('/dashboard/invoices');
@@ -94,7 +93,7 @@ export type State = {
   message?: string | null;
 };
 
-export async function createInvoice(prevState: State, formData: FormData) {
+export async function createInvoice(state: State, formData: FormData) {
     const validatedFields = CreateInvoice.safeParse({
         customerId: formData.get('customerId'),
         amount: formData.get('amount'),

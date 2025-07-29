@@ -1,4 +1,4 @@
-'use client';
+'use client'; 
 
 import { CustomerField, InvoiceForm } from '@/app/lib/definitions';
 import {
@@ -10,7 +10,7 @@ import {
 import Link from 'next/link';
 import { Button } from '@/app/ui/button';
 import { updateInvoice, State } from '@/app/lib/actions';
-import { useActionState } from 'react';
+import { useActionState } from 'react'; 
 
 export default function EditInvoiceForm({
   invoice,
@@ -128,7 +128,7 @@ export default function EditInvoiceForm({
                 <label
                   htmlFor="paid"
                   className="ml-2 flex cursor-pointer items-center gap-1.5 rounded-full bg-green-500 px-3 py-1.5 text-xs font-medium text-white"
-                >
+                > 
                   Paid <CheckIcon className="h-4 w-4" />
                 </label>
               </div>
@@ -157,7 +157,7 @@ export default function EditInvoiceForm({
         >
           Cancel
         </Link>
-        <Button type="submit">Edit Invoice</Button>
+        <Button type="submit">Update Invoice</Button>
       </div>
     </form>
   );
